@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Galeria de Jogos</title>
+	</head>
+	<body>
+		<h1>Essa é a página home.</h1>
+		
+		<ul th:each="jogo: ${todosJogos}">
+			<li th:text="${jogo.titulo}">Título</li>
+		</ul>
+		<table>
+			<tr>
+				<th>Id</th>
+				<th>Título</th>
+				<th>Gênero</th>
+				<th>Desenvolvedora</th>
+				<th>Plataforma</th>
+				<th>Data de Compra</th>
+				<th>Descrição</th>
+				<th>Url da capa</th>
+				<th>Status do jogo</th>
+			</tr>
+			<tr th:each="jogo: ${todosJogos}">
+				<td th:text="${jogo.id}">Id</td>
+				<td th:text="${jogo.titulo}">Título</td>
+				<td th:text="${jogo.genero.nome}">Gênero</td>
+				<td th:text="${jogo.desenvolvedora}">Desenvolvedora</td>
+				<td th:text="${jogo.plataforma}">Plataforma</td>
+				<td th:text="${jogo.dataCompra}">Data de compra</td>
+				<td th:text="${jogo.descricao}">Descrição</td>
+				<td th:text="${jogo.urlCapa}">Url da capa</td>
+				<td th:text="${jogo.statusJogo}">Status do Jogo</td>
+			</tr>
+		</table>
+	</body>
+</html>
